@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide — Cindy Zeng</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Style-guide-specific layout — does not affect the main site CSS */
+
+    .sg-container { max-width: 900px; margin: 0 auto; padding: var(--space-xl) var(--space-md); }
+
+    .sg-section { margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: var(--border); }
+    .sg-section:last-child { border-bottom: none; }
+
+    .sg-section h2 { font-family: var(--font-sans); font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-muted); margin-bottom: var(--space-lg); }
+
+    /* Color swatches */
+    .sg-swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-md); }
+    .sg-swatch {
+      display: flex; flex-direction: column; gap: var(--space-xs);
+      background: var(--color-card-bg); border: var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .sg-swatch-chip { height: 80px; }
+    .sg-swatch-info { padding: 0.6rem 0.8rem 0.8rem; }
+    .sg-swatch-name { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; color: var(--color-text); }
+    .sg-swatch-value { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); }
+
+    /* Typography samples */
+    .sg-type-sample { margin-bottom: var(--space-md); }
+    .sg-type-label {
+      font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted);
+      display: flex; gap: var(--space-sm); align-items: baseline; margin-bottom: var(--space-xs);
+    }
+    .sg-type-label .var-name { font-weight: 600; }
+    .sg-type-label .computed { opacity: 0.6; }
+
+    /* Link states */
+    .sg-link-row { display: flex; gap: var(--space-lg); flex-wrap: wrap; }
+    .sg-link-row a { font-size: var(--text-base); }
+    .sg-link-label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); display: block; margin-bottom: var(--space-xs); }
+
+    /* Spacing bars */
+    .sg-space-item { display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-sm); }
+    .sg-space-bar { height: 24px; border-radius: 3px; background: var(--color-accent); opacity: 0.6; min-width: 4px; }
+    .sg-space-info { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); white-space: nowrap; min-width: 140px; }
+
+    /* Component previews */
+    .sg-comp-preview { padding: var(--space-md); background: var(--color-bg); border: var(--border); border-radius: 6px; margin-bottom: var(--space-sm); }
+    .sg-comp-label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); margin-bottom: var(--space-sm); }
+
+    /* Lightbox preview (static — shown open for reference) */
+    .sg-lightbox-preview { position: relative; height: 300px; border-radius: 6px; overflow: hidden; }
+    .sg-lightbox-preview .lightbox { position: absolute; }
+    .sg-lightbox-preview .lightbox[hidden] { display: flex; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-title" href="index.html">Cindy Zeng</a>
+  <nav class="site-nav">
+    <a href="writing/">Writing</a>
+    <a href="carving/">Carving</a>
+    <a href="projects/videogame1.html">Projects</a>
+  </nav>
+</header>
+
+<main class="sg-container">
+
+  <h1>Style Guide</h1>
+  <p class="tagline" style="margin-bottom:var(--space-xl);">A visual catalog of every design decision in this site. Styles are drawn from <code>css/style.css</code>. This page is for internal reference.</p>
+
+  <!-- ═══════════ COLORS ═══════════ -->
+  <section class="sg-section">
+    <h2>Colors — <code style="text-transform:none;letter-spacing:0;">--color-*</code> Custom Properties</h2>
+    <div class="sg-swatch-grid">
+      <div class="sg-swatch">
+        <div class="sg-swatch-chip" style="background:var(--color-bg);"></div>
+        <div class="sg-swatch-info">
+          <div class="sg-swatch-name">--color-bg</div>
+          <div class="sg-swatch-value">#fefdf8 &middot; Page background, header (scrolled), mobile dropdown</div>
+        </div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch-chip" style="background:var(--color-text);"></div>
+        <div class="sg-swatch-info">
+          <div class="sg-swatch-name">--color-text</div>
+          <div class="sg-swatch-value">#1a1a1a &middot; Body text, headings, active nav, filter (active)</div>
+        </div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch-chip" style="background:var(--color-muted);"></div>
+        <div class="sg-swatch-info">
+          <div class="sg-swatch-name">--color-muted</div>
+          <div class="sg-swatch-value">#5a5a5a &middot; Nav links, footer, dates, excerpts, subtitles</div>
+        </div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch-chip" style="background:var(--color-accent);"></div>
+        <div class="sg-swatch-info">
+          <div class="sg-swatch-name">--color-accent</div>
+          <div class="sg-swatch-value">#5a6b2a &middot; Links, category tags, piece categories, hover states</div>
+        </div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch-chip" style="background:var(--color-rule);"></div>
+        <div class="sg-swatch-info">
+          <div class="sg-swatch-name">--color-rule</div>
+          <div class="sg-swatch-value">#cfc9b8 &middot; Borders, horizontal rules, list dividers, gallery placeholder</div>
+        </div>
+      </div>
+      <div class="sg-swatch">
+        <div class="sg-swatch-chip" style="background:var(--color-card-bg);border:1px solid var(--color-rule);"></div>
+        <div class="sg-swatch-info">
+          <div class="sg-swatch-name">--color-card-bg</div>
+          <div class="sg-swatch-value">#fffef7 &middot; Section cards, intro cards (sits above --color-bg)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TYPOGRAPHY ═══════════ -->
+  <section class="sg-section">
+    <h2>Typography — Headings</h2>
+
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">h1 &middot; --text-2xl</span>
+        <span class="computed">2.4rem / 38px</span>
+      </div>
+      <h1>Welcome. This is a level-one heading.</h1>
+    </div>
+
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">h2 &middot; --text-xl</span>
+        <span class="computed">1.6rem / 26px &middot; Section titles on content pages</span>
+      </div>
+      <h2>This is a level-two heading used for page titles.</h2>
+    </div>
+
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">h3 &middot; --text-lg</span>
+        <span class="computed">1.25rem / 20px &middot; Card titles, subheadings</span>
+      </div>
+      <h3>This is a level-three heading for subsection titles.</h3>
+    </div>
+
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">h4 &middot; (inherits base)</span>
+        <span class="computed">1.05rem / 17px &middot; Minor headings within sections</span>
+      </div>
+      <h4 style="font-size:1rem;">This is a level-four heading for minor labels.</h4>
+    </div>
+  </section>
+
+  <section class="sg-section">
+    <h2>Typography — Body &amp; UI Text</h2>
+
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">Body text &middot; --text-base</span>
+        <span class="computed">1.05rem / 17px &middot; Georgia, 1.72 line-height, max-width 680px</span>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mattis fermentum vehicula. Sed imperdiet, nisi quis porta luctus, libero magna placerat mi, at laoreet risus velit at orci. Ut eget velit id sem sodales varius quis ut ligula. Aenean tincidunt ante quis risus laoreet fringilla. Proin efficitur nisl eget dignissim interdum.</p>
+      <p>Ut rhoncus, orci nec blandit faucibus, dolor nibh sollicitudin nisl, sed mollis justo dui ut diam. Vivamus sit amet elementum lectus. Sed in consectetur lorem. Praesent at nunc lobortis, maximus nisi nec, pulvinar massa.</p>
+    </div>
+
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">Small text &middot; --text-sm</span>
+        <span class="computed">0.88rem / 14px &middot; Excerpts, subtitles, meta info</span>
+      </div>
+      <p style="font-size:var(--text-sm);color:var(--color-muted);">This is secondary body text used for excerpts, subtitles, and supplementary information that accompanies primary content.</p>
+    </div>
+
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">Extra-small text &middot; --text-xs</span>
+        <span class="computed">0.78rem / 12px &middot; Dates, footer, category labels, tags</span>
+      </div>
+      <p style="font-size:var(--text-xs);color:var(--color-muted);">THIS IS UI TEXT AT THE SMALLEST SIZE — USED FOR DATES, FOOTER LINKS, AND LABELS.</p>
+    </div>
+  </section>
+
+  <section class="sg-section">
+    <h2>Typography — Font Stacks</h2>
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">--font-serif</span>
+        <span class="computed">Georgia, "Times New Roman", serif &middot; Body text, headings, site title</span>
+      </div>
+      <p>The quick brown fox jumps over the lazy dog. <em>Italic emphasis.</em> <strong>Bold weight.</strong> 0123456789</p>
+    </div>
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">--font-sans</span>
+        <span class="computed">-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif &middot; Navigation, filters, buttons</span>
+      </div>
+      <p style="font-family:var(--font-sans);">The quick brown fox jumps over the lazy dog. <em>Italic emphasis.</em> <strong>Bold weight.</strong> 0123456789</p>
+    </div>
+    <div class="sg-type-sample">
+      <div class="sg-type-label">
+        <span class="var-name">--font-mono</span>
+        <span class="computed">"SF Mono", "Cascadia Code", Consolas, monospace &middot; Code, labels in this style guide</span>
+      </div>
+      <p style="font-family:var(--font-mono);">The quick brown fox jumps over the lazy dog. 0123456789</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ LINK STATES ═══════════ -->
+  <section class="sg-section">
+    <h2>Link States</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-lg);">
+      <div>
+        <span class="sg-link-label">Default link (--color-accent)</span>
+        <a href="#">This is a text link in body content</a>
+      </div>
+      <div>
+        <span class="sg-link-label">Navigation link (--color-muted)</span>
+        <a class="sg-nav-demo" href="#" style="font-family:var(--font-sans);font-size:var(--text-sm);color:var(--color-muted);text-decoration:none;letter-spacing:0.02em;">Writing</a>
+      </div>
+      <div>
+        <span class="sg-link-label">Active nav link (--color-text + underline)</span>
+        <a class="active" href="#" style="font-family:var(--font-sans);font-size:var(--text-sm);color:var(--color-text);text-decoration:underline;text-underline-offset:4px;">Carving</a>
+      </div>
+      <div>
+        <span class="sg-link-label">Writing title hover (--color-accent)</span>
+        <a class="writing-title" href="#" style="display:block;">Sample Writing Title → hover me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SPACING SCALE ═══════════ -->
+  <section class="sg-section">
+    <h2>Spacing Scale — <code style="text-transform:none;letter-spacing:0;">--space-*</code> Variables</h2>
+
+    <div class="sg-space-item">
+      <span class="sg-space-info">--space-xs &middot; 0.4rem / 6px</span>
+      <div class="sg-space-bar" style="width:6px;"></div>
+      <span style="font-size:var(--text-xs);color:var(--color-muted);">Tight internal gaps (tag padding, badge spacing)</span>
+    </div>
+    <div class="sg-space-item">
+      <span class="sg-space-info">--space-sm &middot; 0.8rem / 13px</span>
+      <div class="sg-space-bar" style="width:13px;"></div>
+      <span style="font-size:var(--text-xs);color:var(--color-muted);">Small gaps (filter button groups, footer links)</span>
+    </div>
+    <div class="sg-space-item">
+      <span class="sg-space-info">--space-md &middot; 1.5rem / 24px</span>
+      <div class="sg-space-bar" style="width:24px;"></div>
+      <span style="font-size:var(--text-xs);color:var(--color-muted);">Default component spacing (card padding, list item gaps, gallery gap)</span>
+    </div>
+    <div class="sg-space-item">
+      <span class="sg-space-info">--space-lg &middot; 2.5rem / 40px</span>
+      <div class="sg-space-bar" style="width:40px;"></div>
+      <span style="font-size:var(--text-xs);color:var(--color-muted);">Section padding, nav link gaps, footer padding</span>
+    </div>
+    <div class="sg-space-item">
+      <span class="sg-space-info">--space-xl &middot; 4rem / 64px</span>
+      <div class="sg-space-bar" style="width:64px;"></div>
+      <span style="font-size:var(--text-xs);color:var(--color-muted);">Major section separation, page-top padding</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ COMPONENTS ═══════════ -->
+  <section class="sg-section">
+    <h2>Components — Filter Buttons &middot; <code style="text-transform:none;letter-spacing:0;">.filter</code></h2>
+
+    <div class="sg-comp-preview">
+      <div class="sg-comp-label">Category filter bar (as rendered on /writing/ and /carving/)</div>
+      <nav class="category-filters" style="margin-bottom:0;">
+        <button class="filter active" data-category="all">All</button>
+        <button class="filter" data-category="essay">Essay</button>
+        <button class="filter" data-category="fiction">Fiction</button>
+        <button class="filter" data-category="criticism">Criticism</button>
+        <button class="filter" data-category="academic">Academic</button>
+        <button class="filter" data-category="journal">Journal</button>
+        <button class="filter" data-category="other">Other</button>
+      </nav>
+    </div>
+  </section>
+
+  <section class="sg-section">
+    <h2>Components — Section Card &middot; <code style="text-transform:none;letter-spacing:0;">.section-card</code></h2>
+
+    <div class="sg-comp-preview">
+      <div class="sg-comp-label">Homepage section card (hover to see lift + shadow)</div>
+      <div style="display:flex;gap:var(--space-md);flex-wrap:wrap;">
+        <a class="section-card" href="#" style="max-width:240px;">
+          <h2>Writing</h2>
+          <p>Essays, criticism, fiction, and academic work.</p>
+        </a>
+        <a class="section-card" href="#" style="max-width:240px;">
+          <h2>Carving</h2>
+          <p>Stone carving and seal carving.</p>
+        </a>
+        <a class="section-card" href="#" style="max-width:240px;">
+          <h2>Projects</h2>
+          <p>Video game script and other works.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section">
+    <h2>Components — Gallery Item &middot; <code style="text-transform:none;letter-spacing:0;">.gallery-item</code> + <code style="text-transform:none;letter-spacing:0;">.gallery-overlay</code></h2>
+
+    <div class="sg-comp-preview">
+      <div class="sg-comp-label">Gallery grid cell (hover to reveal overlay)</div>
+      <div class="gallery-grid" style="margin-top:0;">
+        <div class="gallery-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23cfc9b8' width='200' height='200'/%3E%3Ctext x='100' y='105' text-anchor='middle' font-family='Georgia,serif' font-size='14' fill='%235a5a5a'%3ESample%3C/text%3E%3C/svg%3E" alt="Placeholder carving image">
+          <div class="gallery-overlay" style="opacity:1;">
+            <h3>Untitled Stone Carving</h3>
+            <p>Stone carving &middot; 2025</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23cfc9b8' width='200' height='200'/%3E%3Ctext x='100' y='105' text-anchor='middle' font-family='Georgia,serif' font-size='14' fill='%235a5a5a'%3ESample%3C/text%3E%3C/svg%3E" alt="Placeholder seal carving image">
+          <div class="gallery-overlay">
+            <h3>Seal — Family Name</h3>
+            <p>Seal carving &middot; 2024</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23cfc9b8' width='200' height='200'/%3E%3Ctext x='100' y='105' text-anchor='middle' font-family='Georgia,serif' font-size='14' fill='%235a5a5a'%3ESample%3C/text%3E%3C/svg%3E" alt="Placeholder carving image">
+          <div class="gallery-overlay">
+            <h3>Abstract Form Study</h3>
+            <p>Stone carving &middot; 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section">
+    <h2>Components — Lightbox &middot; <code style="text-transform:none;letter-spacing:0;">.lightbox</code></h2>
+
+    <div class="sg-comp-preview">
+      <div class="sg-comp-label">Lightbox overlay (shown open for reference — normally hidden with [hidden])</div>
+      <div class="sg-lightbox-preview" style="background:#1a1a1a;">
+        <div class="lightbox" style="position:static;display:flex;">
+          <button class="lightbox-close" aria-label="Close" style="top:0.5rem;right:0.5rem;">×</button>
+          <img class="lightbox-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23cfc9b8' width='400' height='300'/%3E%3Ctext x='200' y='155' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%235a5a5a'%3EFull-size image%3C/text%3E%3C/svg%3E" alt="Sample lightbox image">
+          <div class="lightbox-info">
+            <h3 class="lightbox-title">Untitled Stone Carving</h3>
+            <p class="lightbox-meta">Soapstone &middot; 15 × 10 × 8 cm &middot; 2025</p>
+            <p class="lightbox-notes">A figure study exploring the relationship between negative space and organic form.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section">
+    <h2>Components — Writing List Entry &middot; <code style="text-transform:none;letter-spacing:0;">.writing-entry</code></h2>
+
+    <div class="sg-comp-preview">
+      <div class="sg-comp-label">Writing index list item</div>
+      <ul class="writing-list" style="margin:0;">
+        <li class="writing-entry" data-category="academic">
+          <a class="writing-title" href="#">Cooperation and Cheating in Microbial Exoenzyme Production</a>
+          <span class="writing-date">July 2026</span>
+          <span class="writing-category">Academic</span>
+          <p class="writing-excerpt">An evolutionary game-theory analysis of how cooperative enzyme secretion can persist in microbial populations despite the threat of cheater mutants.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-bio">Writer, carver, storyteller.</p>
+  <p class="footer-links">
+    <a href="mailto:contact@cindyzen g.com">Email</a>
+    <a href="about/">About</a>
+  </p>
+  <a class="back-to-top" href="#">↑ Back to top</a>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
