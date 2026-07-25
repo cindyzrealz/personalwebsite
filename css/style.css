@@ -15,7 +15,7 @@
   --color-card-bg:  #fffef7;
 
   /* Typography */
-  --font-serif:     "Crimson Text", "Palatino Linotype", Georgia, "Times New Roman", serif;
+  --font-serif:     Georgia, "Times New Roman", serif;
   --font-sans:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono:      "SF Mono", "Cascadia Code", Consolas, monospace;
 
@@ -24,7 +24,7 @@
   --text-xs:        0.78rem;
   --text-lg:        1.25rem;
   --text-xl:        1.6rem;
-  --text-2xl:       2rem;
+  --text-2xl:       2.4rem;
 
   --leading:        1.72;
   --measure:         680px;   /* max width for readable body text */
