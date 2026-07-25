@@ -10,7 +10,7 @@
   --color-bg:       #fefdf8;
   --color-text:     #1a1a1a;
   --color-muted:    #5a5a5a;
-  --color-accent:   #2d5aa0;
+  --color-accent:   #5a6b2a;
   --color-rule:     #cfc9b8;
   --color-card-bg:  #fffef7;
 
@@ -69,7 +69,7 @@ body {
   background: transparent;
   transition: background var(--ease);
 }
-.site-header.scrolled { background: rgba(254,253,248,0.92); }
+.site-header.scrolled { background: color-mix(in srgb, var(--color-bg) 92%, transparent); }
 .site-title {
   font-family: var(--font-serif); font-size: var(--text-lg); font-weight: 600;
   color: var(--color-text); text-decoration: none;
@@ -195,7 +195,7 @@ body {
 @media (max-width: 600px) { .gallery-grid { grid-template-columns: 1fr; } }
 .gallery-item {
   position: relative; overflow: hidden; border-radius: 4px;
-  cursor: pointer; aspect-ratio: 1; background: #e8e4d8;
+  cursor: pointer; aspect-ratio: 1; background: var(--color-rule);
 }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .gallery-overlay {
