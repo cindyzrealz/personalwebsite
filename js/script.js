@@ -101,20 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* ── Intro sequence: click-to-advance ── */
-  const introScreen = document.querySelector('.intro-screen');
-  if (introScreen) {
-    function goToIntro2() {
-      document.body.style.opacity = '0';
-      document.body.style.transition = 'opacity 0.6s ease';
-      setTimeout(function() {
-        window.location.href = 'intro2.html';
-      }, 600);
-    }
-    introScreen.addEventListener('click', goToIntro2);
-    window.addEventListener('wheel', function(e) {
-      if (e.deltaY > 0) goToIntro2();
-    }, { once: true });
-  }
-
 });
