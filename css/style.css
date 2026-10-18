@@ -44,6 +44,23 @@
   --shadow-sm:      0 1px 4px rgba(0,0,0,0.04);
   --shadow-md:      0 4px 16px rgba(0,0,0,0.08);
 
+  /* Room scene (homepage illustration) */
+  --room-wall:       #f1ecdf;
+  --room-floor:      #e6dfc9;
+  --room-line:       #d8d0bb;
+  --room-rug:        #ded6c0;
+  --room-wood:       #a07a4e;
+  --room-wood-dark:  #7d5f3c;
+  --room-leaf:       #5a6b2a;
+  --room-leaf-dark:  #465420;
+  --room-orange:     #dd8a3c;
+  --room-seal:       #b8442e;
+  --room-screen:     #2b3a55;
+  --room-screen-hi:  #3b4f73;
+  --room-code:       #5b7ba6;
+  --room-glass:      #dbe4ee;
+  --room-paper:      #ece6d4;
+
   /* Transitions */
   --ease:           0.25s ease;
   --ease-slow:      0.6s ease;
@@ -243,3 +260,45 @@ body {
   .hamburger { display: block; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text); }
 }
 @media (min-width: 641px) { .hamburger { display: none; } }
+
+/* ── Homepage: Room Scene ── */
+.room { max-width: 1080px; margin: 0 auto; padding: var(--space-lg) var(--space-md) var(--space-xl); }
+.room-heading { text-align: center; margin-bottom: var(--space-md); }
+.room-heading h1 { font-size: var(--text-2xl); font-weight: 600; }
+.room-heading p { font-size: var(--text-lg); color: var(--color-muted); margin-top: var(--space-xs); }
+.room-scene { width: 100%; height: auto; display: block; }
+
+.room-object { cursor: pointer; outline: none; }
+.room-object .obj {
+  transition: transform var(--ease-slow), filter var(--ease);
+  transform-box: fill-box; transform-origin: 50% 100%;
+}
+.room-object:hover .obj,
+.room-object:focus-visible .obj { transform: translateY(-6px); filter: saturate(1.08); }
+.room-object .room-label { opacity: 0; transition: opacity var(--ease); pointer-events: none; }
+.room-object:hover .room-label,
+.room-object:focus-visible .room-label { opacity: 1; }
+.room-label .lbl-pill { fill: var(--color-text); }
+.room-label text {
+  fill: var(--color-bg); font-family: var(--font-sans);
+  font-size: 18px; font-weight: 600; letter-spacing: 0.02em;
+}
+
+/* Ambient animation */
+.mote { animation: mote-float 9s ease-in-out infinite; }
+.mote.m2 { animation-duration: 13s; animation-delay: 2s; }
+.mote.m3 { animation-duration: 11s; animation-delay: 4s; }
+@keyframes mote-float {
+  0%, 100% { transform: translateY(0); opacity: 0; }
+  50% { transform: translateY(-38px); opacity: 0.5; }
+}
+.tree-canopy { transform-box: fill-box; transform-origin: 50% 100%; animation: sway 7s ease-in-out infinite; }
+@keyframes sway {
+  0%, 100% { transform: rotate(-0.8deg); }
+  50% { transform: rotate(0.8deg); }
+}
+.mirror-glint { animation: glint 6s ease-in-out infinite; }
+@keyframes glint {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.55; }
+}
