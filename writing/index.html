@@ -23,28 +23,67 @@
 
     <nav class="category-filters">
       <button class="filter active" data-category="all">All</button>
-      <button class="filter" data-category="essay">Essay</button>
-      <button class="filter" data-category="fiction">Fiction</button>
-      <button class="filter" data-category="criticism">Criticism</button>
+      <button class="filter" data-category="essays-criticism">Essays &amp; Criticism</button>
+      <button class="filter" data-category="fiction-poetry">Fiction &amp; Poetry</button>
       <button class="filter" data-category="academic">Academic</button>
-      <button class="filter" data-category="journal">Journal</button>
+      <button class="filter" data-category="translation">Translation</button>
       <button class="filter" data-category="other">Other</button>
     </nav>
 
     <ul class="writing-list">
-      <!-- Sample entry — add more pieces here -->
+      <!-- Newest first. -->
+      <!-- TODO Day 9: entries with href="#" need their own piece page — wire the title link then. -->
+
+      <li class="writing-entry" data-category="essays-criticism">
+        <a class="writing-title" href="#">Reading Rooms: A Defense of Slow Attention</a>
+        <time class="writing-date" datetime="2026-10">October 2026</time>
+        <span class="writing-category">Essays &amp; Criticism</span>
+        <p class="writing-excerpt">
+          On reading as a physical act — how the room, the light, and the chair shape what a text can say.
+        </p>
+      </li>
+
+      <li class="writing-entry" data-category="fiction-poetry">
+        <a class="writing-title" href="#">The Orange Tree in Winter</a>
+        <time class="writing-date" datetime="2026-09">September 2026</time>
+        <span class="writing-category">Fiction &amp; Poetry</span>
+        <p class="writing-excerpt">
+          A short story about a family who keeps one orange tree alive through the coldest year of their lives.
+        </p>
+      </li>
+
+      <li class="writing-entry" data-category="other">
+        <a class="writing-title" href="#">Notes Toward a Bestiary</a>
+        <time class="writing-date" datetime="2026-08">August 2026</time>
+        <span class="writing-category">Other</span>
+        <p class="writing-excerpt">
+          Fragments and descriptions of creatures that never quite made it into any field guide.
+        </p>
+      </li>
+
       <li class="writing-entry" data-category="academic">
         <a class="writing-title" href="game-theory.html">
           Cooperation and Cheating in Microbial Exoenzyme Production
         </a>
-        <span class="writing-date">July 2026</span>
+        <time class="writing-date" datetime="2026-07">July 2026</time>
         <span class="writing-category">Academic</span>
         <p class="writing-excerpt">
           An evolutionary game-theory analysis of how cooperative enzyme secretion
           can persist in microbial populations despite the threat of cheater mutants.
         </p>
       </li>
+
+      <li class="writing-entry" data-category="essays-criticism">
+        <a class="writing-title" href="#">On Translation and the Taste of Home</a>
+        <time class="writing-date" datetime="2026-07">July 2026</time>
+        <span class="writing-category">Essays &amp; Criticism</span>
+        <p class="writing-excerpt">
+          What is lost — and what is accidentally found — when a recipe moves between languages.
+        </p>
+      </li>
     </ul>
+
+    <p class="empty-state" hidden>Nothing here yet — check back soon.</p>
 
   </main>
 

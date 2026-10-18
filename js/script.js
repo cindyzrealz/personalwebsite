@@ -27,20 +27,35 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ── Category filters (writing + carving) ── */
-  document.querySelectorAll('.filter').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const category = this.dataset.category;
-      const parent = this.parentElement;
-      parent.querySelectorAll('.filter').forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
+  document.querySelectorAll('.category-filters').forEach(function(nav) {
+    const container = nav.nextElementSibling;
+    if (!container) return;
+    const items = container.querySelectorAll('[data-category]');
+    const empty = container.nextElementSibling;
 
-      const container = parent.nextElementSibling;
-      if (!container) return;
-      const items = container.querySelectorAll('[data-category]');
-      items.forEach(function(item) {
-        item.style.display = (category === 'all' || item.dataset.category === category) ? '' : 'none';
+    function refreshEmptyState() {
+      let visible = 0;
+      items.forEach(function(item) { if (item.style.display !== 'none') visible++; });
+      if (empty && empty.classList.contains('empty-state')) {
+        empty.hidden = visible !== 0;
+      }
+    }
+
+    nav.querySelectorAll('.filter').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const category = this.dataset.category;
+        nav.querySelectorAll('.filter').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+
+        items.forEach(function(item) {
+          const show = (category === 'all' || item.dataset.category === category);
+          item.style.display = show ? '' : 'none';
+        });
+        refreshEmptyState();
       });
     });
+
+    refreshEmptyState();
   });
 
   /* ── Lightbox (carving gallery) ── */
