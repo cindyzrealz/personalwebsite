@@ -1,0 +1,14 @@
+# Keep only the web-optimized outputs in version control.
+# Raw source photos stay local-only — back them up separately
+# (e.g. ~/Pictures/carving-raw/, Time Machine, or iCloud).
+
+*.jpg
+*.jpeg
+*.png
+
+!*-thumb.jpg
+!*-full.jpg
+!*-thumb.jpeg
+!*-full.jpeg
+!*-thumb.png
+!*-full.png
