@@ -67,36 +67,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const lbNotes = lightbox.querySelector('.lightbox-notes');
     const lbClose = lightbox.querySelector('.lightbox-close');
 
+    let lastFocus = null;
+
     document.querySelectorAll('.gallery-item').forEach(function(item) {
-      item.addEventListener('click', function() {
-        const img = this.querySelector('img');
-        const overlay = this.querySelector('.gallery-overlay');
-        if (img) {
-          lbImage.src = img.src;
-          lbImage.alt = img.alt;
-        }
-        if (overlay) {
-          const h3 = overlay.querySelector('h3');
-          const p = overlay.querySelector('p');
-          if (h3) lbTitle.textContent = h3.textContent;
-          if (p) lbMeta.textContent = p.textContent;
-        }
-        lbNotes.textContent = this.dataset.notes || '';
-        lightbox.removeAttribute('hidden');
+      function open() {
+        const title = item.dataset.title || '';
+        const medium = item.dataset.medium || '';
+        const dims = item.dataset.dims || '';
+        const date = item.dataset.date || '';
+        const notes = item.dataset.notes || '';
+        const thumb = item.querySelector('img');
+        const full = item.dataset.full || (thumb && thumb.src) || '';
+
+        lbImage.src = full;
+        lbImage.alt = title;
+        lbTitle.textContent = title;
+        lbMeta.textContent = [medium, dims, date].filter(Boolean).join(' · ');
+        lbNotes.textContent = notes;
+
+        lastFocus = item;
+        lightbox.classList.add('open');
         document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      }
+      item.addEventListener('click', open);
+      item.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
       });
     });
 
     function closeLightbox() {
-      lightbox.setAttribute('hidden', '');
+      lightbox.classList.remove('open');
       document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
     lbClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', function(e) {
       if (e.target === lightbox) closeLightbox();
     });
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) closeLightbox();
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
     });
   }
 
