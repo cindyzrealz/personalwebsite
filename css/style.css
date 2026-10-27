@@ -196,6 +196,13 @@ body {
 }
 .piece-body { font-size: var(--text-base); line-height: 1.75; }
 .piece-body p + p { margin-top: 1em; text-indent: 0; }
+.piece-body h2 { font-size: var(--text-xl); font-weight: 600; margin: 1.75em 0 0.6em; }
+.piece-body blockquote {
+  margin: var(--space-md) 0 var(--space-lg) 2em;
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--color-rule);
+  color: var(--color-muted);
+}
 .piece-nav { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: var(--border); font-size: var(--text-sm); }
 .piece-nav a { color: var(--color-muted); text-decoration: none; }
 .piece-nav a:hover { color: var(--color-text); }
