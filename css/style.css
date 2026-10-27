@@ -24,7 +24,7 @@
   --text-xs:        0.78rem;
   --text-lg:        1.25rem;
   --text-xl:        1.6rem;
-  --text-2xl:       2.4rem;
+  --text-2xl:       36px;
 
   --leading:        1.72;
   --measure:         680px;   /* max width for readable body text */
@@ -77,6 +77,8 @@ body {
   line-height: var(--leading);
   padding-top: var(--header-height);
 }
+
+h1 { font-size: 36px; }
 
 /* ── Header ── */
 .site-header {
@@ -296,7 +298,7 @@ body {
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   min-height: 100vh; text-align: center; padding: var(--space-md);
 }
-.game-title { font-size: 3rem; font-weight: 600; }
+.game-title { font-size: 36px; font-weight: 600; }
 .game-subtitle { font-size: var(--text-lg); color: rgba(224,216,200,0.6); margin-top: var(--space-sm); }
 .game-prompt { font-size: var(--text-sm); color: rgba(224,216,200,0.5); margin-top: var(--space-xl); animation: pulse 2s ease-in-out infinite; }
 
