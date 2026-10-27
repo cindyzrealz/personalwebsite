@@ -208,6 +208,7 @@ body {
 .piece-body sup { font-size: 0.75em; line-height: 0; }
 .piece-body sup a { text-decoration: none; color: var(--color-accent); }
 .piece-body sup a:hover { color: var(--color-text); }
+.piece-body .section-break { margin: var(--space-lg) 0; text-align: center; color: var(--color-muted); }
 .piece-endnotes,
 .piece-bibliography {
   margin-top: var(--space-xl);
