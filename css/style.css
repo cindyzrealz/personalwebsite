@@ -204,6 +204,9 @@ body {
   border-left: 2px solid var(--color-rule);
   color: var(--color-muted);
 }
+.piece-body .epigraph { margin: 0 0 var(--space-lg); text-align: center; color: var(--color-muted); }
+.piece-body .epigraph-quote { font-style: italic; }
+.piece-body .epigraph-attribution { margin-top: 0.75em; }
 .piece-nav { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: var(--border); font-size: var(--text-sm); }
 .piece-nav a { color: var(--color-muted); text-decoration: none; }
 .piece-nav a:hover { color: var(--color-text); }
