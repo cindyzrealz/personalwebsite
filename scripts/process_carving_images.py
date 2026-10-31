@@ -58,6 +58,20 @@ SLUGS = {
     "负屃": "fu-xi",
     "霸下": "ba-xia",
     "龙王": "long-wang",
+
+    # Lunar Months — the elegant names of the twelve months (十二月份雅称)
+    "十二月份雅称": "shi-er-yue-fen-ya-cheng",
+    "孟春": "meng-chun",
+    "花朝": "hua-zhao",
+    "辰月": "chen-yue",
+    "槐序": "huai-xu",
+    "荷月": "he-yue",
+    "霜序": "shuang-xu",
+    "桂月": "gui-yue",
+    "孟秋": "meng-qiu",
+    "孟冬": "meng-dong",
+    "嘉平": "jia-ping",
+    "龙潜": "long-qian",
 }
 
 
