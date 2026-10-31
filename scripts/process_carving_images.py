@@ -72,6 +72,20 @@ SLUGS = {
     "孟冬": "meng-dong",
     "嘉平": "jia-ping",
     "龙潜": "long-qian",
+
+    # Dunhuang
+    "一花一世界": "yi-hua-yi-shi-jie",
+    "三兔共耳": "san-tu-gong-er",
+    "丝绸盛景": "si-chou-sheng-jing",
+    "九色鹿": "jiu-se-lu",
+    "敦煌": "dunhuang",
+    "敦煌行": "dunhuang-xing",
+    "月牙泉": "yue-ya-quan",
+    "涅槃": "nie-pan",
+    "玉门关": "yu-men-guan",
+    "莫高窟": "mo-gao-ku",
+    "藏经洞": "cang-jing-dong",
+    "飞天": "fei-tian",
 }
 
 
