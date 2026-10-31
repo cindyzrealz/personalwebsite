@@ -19,3 +19,6 @@ build/
 
 # Logs
 *.log
+
+# Raw texture sources (processed output is committed instead)
+assets/images/xuanzhi_texture.jpg
