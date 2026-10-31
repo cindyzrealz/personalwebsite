@@ -46,6 +46,18 @@ SLUGS = {
     "桃花源": "tao-hua-yuan",
     "牺牲": "xi-sheng",
     "陌上桑": "mo-shang-sang",
+
+    # Dragon — the Nine Sons of the Dragon (龙生九子) plus the Dragon King
+    "嘲风": "chao-feng",
+    "囚牛": "qiu-niu",
+    "狴犴": "bi-an",
+    "狻猊": "suan-ni",
+    "睚眦": "ya-zi",
+    "蒲牢": "pu-lao",
+    "螭吻": "chi-wen",
+    "负屃": "fu-xi",
+    "霸下": "ba-xia",
+    "龙王": "long-wang",
 }
 
 
