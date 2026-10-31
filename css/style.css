@@ -140,7 +140,7 @@ h1 { font-size: 36px; }
   transition: transform var(--ease), box-shadow var(--ease);
 }
 .section-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.section-card h2 { font-size: var(--text-lg); margin-bottom: var(--space-xs); }
+.section-card h2 { font-size: 24px; margin-bottom: var(--space-xs); }
 .section-card p { font-size: var(--text-sm); color: var(--color-muted); }
 .homepage-extras { text-align: center; margin-top: var(--space-xl); }
 .orange-tree-icon { font-size: 2rem; margin-bottom: var(--space-sm); cursor: default; }
@@ -201,7 +201,7 @@ h1 { font-size: 36px; }
 }
 .piece-body { font-size: var(--text-base); line-height: 1.75; }
 .piece-body p + p { margin-top: 1em; text-indent: 0; }
-.piece-body h2 { font-size: var(--text-xl); font-weight: 600; margin: 1.75em 0 0.6em; }
+.piece-body h2 { font-size: 24px; font-weight: 600; margin: 1.75em 0 0.6em; }
 .piece-body blockquote {
   margin: var(--space-md) 0 var(--space-lg) 2em;
   padding-left: var(--space-md);
@@ -221,7 +221,7 @@ h1 { font-size: 36px; }
 }
 .piece-endnotes h2,
 .piece-bibliography h2 {
-  font-size: var(--text-xl);
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 0.6em;
 }
@@ -314,7 +314,7 @@ h1 { font-size: 36px; }
 .about-page { max-width: var(--measure); margin: 0 auto; padding: var(--space-xl) var(--space-md); }
 .about-page h1 { font-size: var(--text-2xl); margin-bottom: var(--space-lg); }
 .about-page section { margin-bottom: var(--space-lg); }
-.about-page h2 { font-size: var(--text-lg); margin-bottom: var(--space-sm); }
+.about-page h2 { font-size: 24px; margin-bottom: var(--space-sm); }
 .about-photo { max-width: 200px; border-radius: 50%; margin-bottom: var(--space-md); }
 .about-contact ul { list-style: none; }
 .about-contact li { font-size: var(--text-sm); margin-bottom: var(--space-xs); }
