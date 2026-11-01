@@ -101,7 +101,7 @@ h1 { font-size: 36px; }
 }
 .site-nav { display: flex; gap: var(--space-lg); }
 .site-nav a {
-  font-family: var(--font-sans); font-size: var(--text-sm); font-weight: 400;
+  font-family: var(--font-serif); font-size: var(--text-sm); font-weight: 400;
   color: var(--color-muted); text-decoration: none;
   letter-spacing: 0.02em;
   transition: color var(--ease);
