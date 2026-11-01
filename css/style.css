@@ -336,7 +336,7 @@ h1 { font-size: 36px; }
 @media (min-width: 641px) { .hamburger { display: none; } }
 
 /* ── Homepage: Room Scene ── */
-.room { max-width: 1080px; margin: 0 auto; padding: var(--space-lg) var(--space-md); flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; }
+.room { max-width: 1500px; margin: 0 auto; padding: var(--space-lg) var(--space-md); flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; }
 .room-heading { text-align: center; margin-bottom: var(--space-md); }
 .room-heading h1 { font-size: var(--text-2xl); font-weight: 600; }
 .room-heading p { font-size: var(--text-lg); color: var(--color-muted); margin-top: var(--space-xs); }
