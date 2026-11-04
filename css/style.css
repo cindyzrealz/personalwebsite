@@ -318,6 +318,8 @@ h1 { font-size: 36px; }
 .about-page h1 { font-size: var(--text-2xl); margin-bottom: var(--space-lg); }
 .about-page section { margin-bottom: var(--space-lg); }
 .about-page h2 { font-size: 24px; margin-bottom: var(--space-sm); }
+.about-page p { font-size: var(--text-base); line-height: 1.75; }
+.about-page p + p { margin-top: 1em; }
 .about-photo { max-width: 200px; border-radius: 50%; margin-bottom: var(--space-md); }
 .about-contact ul { list-style: none; }
 .about-contact li { font-size: var(--text-sm); margin-bottom: var(--space-xs); }
