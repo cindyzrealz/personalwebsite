@@ -2,6 +2,15 @@
    script.js — Shared JavaScript for cindyzeng.com
    ═══════════════════════════════════════════════════════ */
 
+/* ── Vercel Web Analytics ── */
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+(function () {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = '/_vercel/insights/script.js';
+  document.head.appendChild(s);
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
 
   /* ── Header scroll background ── */
